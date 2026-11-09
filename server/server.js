@@ -53,11 +53,18 @@ app.get('/', (req, res) => {
   res.send('EventHub Backend API is running...');
 });
 
-// Mount API routes
+// Mount API routes (supports both /api/* and root fallbacks)
 app.use('/api/auth', authRoutes);
+app.use('/auth', authRoutes);
+
 app.use('/api/events', eventRoutes);
+app.use('/events', eventRoutes);
+
 app.use('/api/feedback', feedbackRoutes);
+app.use('/feedback', feedbackRoutes);
+
 app.use('/api/admin', adminRoutes);
+app.use('/admin', adminRoutes);
 
 // Error Handling Middlewares
 app.use(notFound);

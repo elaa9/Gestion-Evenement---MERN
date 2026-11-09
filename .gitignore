@@ -1,5 +1,48 @@
 # Dependencies
 node_modules/
+**/node_modules/
+
+# Production builds
+dist/
+dist
+build/
+**/dist/
+**/build/
 
 # Environment variables (Strict - never commit secrets)
 .env
+.env.*
+*.env
+**/.env
+**/.env.*
+
+# Always preserve template environment files for reviewers
+!.env.example
+!**/.env.example
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Local database data
+data/
+db/
+**/data/
+**/db/
