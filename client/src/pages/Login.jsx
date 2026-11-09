@@ -112,7 +112,7 @@ export default function Login() {
           <div className="grid grid-cols-2 gap-2">
             <button
               type="button"
-              onClick={() => { setEmail('admin@eventhub.com'); setPassword('admin123'); }}
+              onClick={() => { setEmail('admin@eventhub.com'); setPassword('Password123!'); }}
               className="text-xs font-semibold px-3 py-2 rounded-xl bg-brand-50 text-brand-700 hover:bg-brand-100 border border-brand-200 transition-colors text-left"
             >
               <span className="block font-black">Admin</span>
@@ -120,7 +120,7 @@ export default function Login() {
             </button>
             <button
               type="button"
-              onClick={() => { setEmail('sarah@eventhub.com'); setPassword('password123'); }}
+              onClick={() => { setEmail('sarah@eventhub.com'); setPassword('Password123!'); }}
               className="text-xs font-semibold px-3 py-2 rounded-xl bg-slate-50 text-slate-700 hover:bg-slate-100 border border-slate-200 transition-colors text-left"
             >
               <span className="block font-black">Organizer</span>
