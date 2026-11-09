@@ -39,11 +39,20 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const mongoose = require('mongoose');
+
 // Basic Health Check Route
-app.get('/api/health', (req, res) => {
+app.get(['/api/health', '/health'], (req, res) => {
+  const states = ['disconnected', 'connected', 'connecting', 'disconnecting'];
+  const state = states[mongoose.connection.readyState] || 'unknown';
   res.status(200).json({
     status: 'OK',
     message: 'EventHub API is running smoothly',
+    mongodb: {
+      status: state,
+      readyState: mongoose.connection.readyState,
+      host: mongoose.connection.host || null
+    },
     timestamp: new Date().toISOString()
   });
 });
